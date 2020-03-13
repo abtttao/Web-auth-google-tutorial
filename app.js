@@ -1,22 +1,22 @@
 const express = require("express");
 const path = require("path");
 const authRoutes = require("./routes/auth-routes");
-const passportSetup =require ("./config/passport-setup");
-const passport = require ("passport")
-const cookiesession = require ("cookie-session");
-const key =require ("./config/key")
+const passportSetup = require("./config/passport-setup");
+const passport = require("passport")
+const cookiesession = require("cookie-session");
+const key = require("./config/key")
 const profileRoutes = require("./routes/profile-routes");
 
 
 const app = express();
 
 
-app.set("view engine","ejs");
+app.set("view engine", "ejs");
 
 //=======- Middleware =======
 app.use(cookiesession({
-    maxAge:1000*60*60,
-    keys:["key.cookie.secret"]
+    maxAge: 1000 * 60 * 60,
+    keys: ["key.cookie.secret"]
 })
 );
 
@@ -36,7 +36,7 @@ app.use(passport.session());
 
 
 //--------- Root ---------
-app.get("/",(req,res) => {
+app.get("/", (req, res) => {
     // res.sendFile(path.join(__dirname, "views/home.html"));
     res.render("home.ejs")
 });

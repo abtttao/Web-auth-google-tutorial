@@ -1,6 +1,6 @@
-const router = require ("express").Router();
-const authCheck = (req,res) => {
-    if(!req.user){
+const router = require("express").Router();
+const authCheck = (req, res) => {
+    if (!req.user) {
         res.redirecet("/auth/login")
     }
     else {
@@ -12,7 +12,7 @@ const authCheck = (req,res) => {
 router.use(authCheck);
 
 // show prfile page
-router.get("/", (req,res) => {
+router.get("/", (req, res) => {
     console.log(req.user)
     // res.render ("profile",{user:req.user});
 

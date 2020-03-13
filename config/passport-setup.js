@@ -2,12 +2,12 @@ const passport = require("passport");
 const googleStrategy = require("passport-google-oauth").OAuth2Strategy;
 const key = require("./key")
 
-passport.serializeUser((user,done) => {
-    done(null,user)
+passport.serializeUser((user, done) => {
+    done(null, user)
 
 })
-passport.deserializeUser((id,done) => {
-    done(null,id)
+passport.deserializeUser((id, done) => {
+    done(null, id)
 
 })
 
@@ -25,9 +25,9 @@ passport.use(
             // console.log(profile.emails[0].value);
             // console.log(profile.photos[0].value);
 
-            const user = {name:profile.displayName, email:profile.emails[0].value, photo:profile.photos[0].value};
+            const user = { name: profile.displayName, email: profile.emails[0].value, photo: profile.photos[0].value };
             // console.log(user)
 
-            done(null,user)
+            done(null, user)
         })
-    );
+);
