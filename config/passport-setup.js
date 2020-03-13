@@ -25,7 +25,8 @@ passport.use(
             // console.log(profile.emails[0].value);
             // console.log(profile.photos[0].value);
 
-            const user = {name:profile.displayName,email:profile.emails[0].value, photo:profile.photos[0].value};
+            const user = {name:profile.displayName, email:profile.emails[0].value, photo:profile.photos[0].value};
+            // console.log(user)
 
             done(null,user)
         })
